@@ -1,0 +1,19 @@
+<RootWidget>:
+    orientation: 'vertical'
+    StatusDisplayWidget:
+        id: status_display
+    StatusChangerWidget:
+        id: status_changer
+
+<StatusDisplayWidget>:
+    Label:
+        text: app.global_state.current_status
+
+<StatusChangerWidget>:
+    orientation: 'horizontal'
+    TextInput:
+        id: input_text
+        multiline: False
+    Button:
+        text: "Mudar Status"
+        on_press: root.change_status(input_text.text)

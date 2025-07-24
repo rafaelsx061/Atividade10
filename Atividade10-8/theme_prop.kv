@@ -1,0 +1,25 @@
+<RootWidget>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 20
+
+    Label:
+        text: "Tema Dinâmico com DictProperty"
+        font_size: 24
+        color: app.app_theme['primary']
+
+    Label:
+        text: "Texto secundário estilizado"
+        font_size: 20
+        color: app.app_theme['secondary']
+
+    Button:
+        text: "Botão com cor primária"
+        background_color: app.app_theme['primary']
+        color: [1, 1, 1, 1]
+
+    Button:
+        text: "Trocar Tema"
+        background_color: app.app_theme['secondary']
+        color: [0, 0, 0, 1]
+        on_release: app.toggle_theme()

@@ -1,0 +1,27 @@
+<AnimatedBox>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 20
+
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Widget:
+        size_hint: None, None
+        size: root.box_size, root.box_size
+        canvas.before:
+            Color:
+                rgba: 0.3, 0.6, 0.9, 1  # azul
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Button:
+        text: "Animar Tamanho"
+        size_hint_y: None
+        height: 50
+        on_release: root.toggle_animation()
