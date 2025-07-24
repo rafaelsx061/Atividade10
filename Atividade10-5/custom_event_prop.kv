@@ -1,0 +1,31 @@
+<MyCustomWidget>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # fundo branco
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: input_message
+        multiline: False
+        hint_text: 'Digite uma mensagem'
+
+    Button:
+        text: 'Atualizar mensagem'
+        size_hint_y: None
+        height: '40dp'
+        on_release:
+            root.message = input_message.text
+
+    Label:
+        id: log_label
+        text: 'Aguardando evento...'
+        size_hint_y: None
+        height: '40dp'
+
+    on_message_changed:
+            log_label.text = f"Evento disparado! Nova mensagem: '{args[1]}'"
