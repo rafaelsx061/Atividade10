@@ -1,0 +1,35 @@
+<MainLayout>:
+    orientation: 'vertical'
+
+    # Área onde o ponto é desenhado
+    MovableDot:
+        id: dot
+        size_hint_y: 0.8  # Ocupa 80% da altura da tela
+
+    # Botões de controle
+    BoxLayout:
+        size_hint_y: 0.2
+        spacing: 5
+        padding: 10
+
+        Button:
+            text: "Esquerda"
+            on_release: dot.move_left()
+        Button:
+            text: "Direita"
+            on_release: dot.move_right()
+        Button:
+            text: "Cima"
+            on_release: dot.move_up()
+        Button:
+            text: "Baixo"
+            on_release: dot.move_down()
+
+# Definição do ponto desenhado
+<MovableDot>:
+    canvas:
+        Color:
+            rgb: 1, 0, 0
+        Ellipse:
+            pos: self.dot_pos  # Usa a propriedade combinada (x, y)
+            size: 50, 50

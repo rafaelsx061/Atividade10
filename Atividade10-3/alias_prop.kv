@@ -1,0 +1,22 @@
+<CalculatorWidget>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    Label:
+        text: "Número 1: " + str(root.num1)
+    Label:
+        text: "Número 2: " + str(root.num2)
+    Label:
+        text: "Soma: " + str(root.sum_result)
+
+    BoxLayout:
+        size_hint_y: None
+        height: 40
+        spacing: 10
+        Button:
+            text: "Num1 +1"
+            on_release: root.num1 += 1
+        Button:
+            text: "Num2 +1"
+            on_release: root.num2 += 1
